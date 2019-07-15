@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,bm}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\title{Introduction to Machine Learning\\Homework 1}
+\begin{document}
+	\maketitle
+	\numberwithin{equation}{section}
+	\section*{[25pts] Kernel Methods}
+	From Mercer theorem, we know a two variables function $k(\cdot,\cdot)$ is a positive definite kernel function if and only if for any N vectors $x_1,x_2,...,x_N$, their kernel matrix is positive definite. Assume $k_1(\cdot,\cdot)$ and $k_2(\cdot,\cdot)$ are positive definite kernel function for matrices $K_1$ and $K_2$ and the element of kernel matrix $K$ is donated as $K_{ij}=k(x_i,x_j)$. Please proof the kernel functions of following matrices are positive definite.\\
+    (1) [5pts] $K_3=a_1 K_1+a_2 K_2$ where $a_1,a_2>0$;\\
+    (2) [10pts] Assume $f(x)=\text{exp}\{-\frac{\|x-\mu\|^2}{2\sigma^2}\}$ where $\mu$ and $\sigma$ are real const. And $K_4$ is defined by $K_4=f(X)^T f(X)$, where $f(X)=[f(x_1),f(x_2),...,f(x_N)]$;\\
+    (3) [10pts] $K_5=K_1\cdot K_2$ where '$\cdot$' means Kronecker product.\\
+	
+\end{document}

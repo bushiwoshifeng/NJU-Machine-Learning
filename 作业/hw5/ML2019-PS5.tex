@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,bm}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\title{Introduction to Machine Learning\\Homework 1}
+\begin{document}
+	\maketitle
+	\numberwithin{equation}{section}
+	\section{[20pts] Naive Bayes Classifier}
+		
+		We learned about the naive Bayes classifier using the "property conditional independence hypothesis". Now we have a data set as shown in the following table:
+		\begin{table}[htp]
+			\centering
+			\caption{Dataset}\label{tab:aStrangeTable}
+		\begin{tabular}{c|ccccc}
+			\hline 
+			& $x_1$ & $x_2$ & $x_3$ & $x_4$ & $y$ \\ 
+			\hline 
+		Instance1	& 1 & 1 & 1 & 0 & 1 \\ 
+			\hline 
+		Instance2	& 1 & 1 & 0 & 0 & 0 \\ 
+			\hline 
+		Instance3	& 0 & 0 & 1 & 1 & 0 \\ 
+			\hline 
+		Instance4	& 1 & 0 & 1 & 1 & 1 \\ 
+			\hline 
+		Instance5	& 0 & 0 & 1 & 1 & 1 \\ 
+			\hline 
+		\end{tabular}
+		\end{table} 
+		
+
+			(1) [10pts]  Calculate: $\Pr\{ y=1 | \mathbf{x}=(1,1,0,1) \}$ and $\Pr\{ y=0 | \mathbf{x}=(1,1,0,1) \}$.
+			
+			(2) [10pts] After using Laplacian Correction, recalculate the value in the previous question.
+			
+	\section{[20pts] Bayes Optimal Classifier}
+	
+	For a binary classification task, when data in the two classes satisfies Gauss distribution and have the same variance, please prove that LDA can produce the bayes optimal classifier.
+	
+	\section{[60pts] Ensemble Methods in Practice}
+	
+	Due to their outstanding performance and robustness, ensemble methods are very popular in machine community. In this experiment we will practice ensemble learning methods based on two classic
+	ideas: Boosting and Bagging.
+	
+	In this experiment, we use an UCI dataset Adult. You can refer to the link\footnote{http://archive.ics.uci.edu/ml/datasets/Adult} to see the data description and download the dataset.
+	
+	Adult is an class imbalanced dataset, so we select AUC as the performance measure. You can adopt sklearn to calculate AUC.
+	
+(1) [10pts] You need finish the code in Python, and only have two files: AdaBoost.py, RandomForestMain.py. (The training and testing process are implemented in one file for each algorithm.)
+	
+(2) [40pts] The is experiment requires to finish the following methods:
+	
+		\begin{itemize}
+			\item Implement AdaBoost algorithm according to the Fig(8.3), and adopt decision tree as the base learner (For the base learner, you can import sklearn.)
+			\item  Implement Random Forest algorithm. Please give a pseudo-code in the experiment report.
+			\item According to the AdaBoost and random forest, analysis the effect of the number of base learners on the performance. Specifically, given the number of base learners, use 5-fold cross validation to obtain the AUC. The range of the number of base learners is decided by yourself.
+			\item Select the best number of base classifiers for AdaBoost and random forests, and obtain the AUC in the test set.
+		\end{itemize}
+
+(3) [10pts] In the experimental report, you need to present the detail experimental process. The experimental report needs to be hierarchical and organized, so that the reader can understand the purpose, process and result of the experiment.
+		
+\end{document}

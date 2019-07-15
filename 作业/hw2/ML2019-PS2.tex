@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,bm}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+
+
+\title{Introduction to Machine Learning\\Homework 2}
+\begin{document}
+	\maketitle
+	\numberwithin{equation}{section}
+	\section{[25pts] Multi-Label Logistic Regression}
+    In multi-label problem, each instance $\bm{x}$ has a label set $\bm{y}=\{y_1,y_2,...,y_l\}$ and each label $y_i\in\{0,1\}$. Assume the post probability $p(\bm{y}|x)$ follows the conditional independence:\\
+    \begin{equation}
+    p(\bm{y}|x)=\prod\limits_{i=1}^l p(y_i|x).
+    \end{equation}
+    Please use the logistic regression method to handle the following questions.\\
+    (1) [15pts] Please give the 'log-likelihood' function of your logistic regression model;\\
+    (2) [10pts] Please calculate the gradient of your 'log-likelihood' function.\\     
+
+
+
+\vspace{3cm}
+
+
+	\numberwithin{equation}{section}
+	\section{[20pts] Linear Discriminant Analysis}
+	
+	Suppose we transform the original $\bf X$ to $\hat{\bf Y}$ via linear regression . In detail, let 
+	
+	\begin{equation*}
+	\hat{\bf Y} = \bf X(\bf X^{\top} \bf X)^{-1}\bf X^{\top}\bf Y = \bf X\hat{\bf B},
+	\end{equation*}
+	where $\bf X$ and $\bf Y$ are the feature and label matrix, respectively.
+	 Similarly for any input $\mathbf{x}$, we get a transformed vector $\hat{\mathbf{y}} = \hat{\bf B}^{\top}\mathbf{x}$. Show that LDA using $\hat{\bf Y}$ is identical to LDA in the original space.
+	
+	
+	
+\vspace{3cm}
+
+
+\numberwithin{equation}{section}
+\section{[55pts] Logistic Regression from scratch  }
+Implementing algorithms is a good way of understanding how they work in-depth. In case that you are not familiar with the pipeline of building a machine learning model, this article can be an example (\href{https://www.jianshu.com/p/ecb89148ed64}{here}).
+
+In this experiment, you are asked to build a classification model on one of UCI data sets, Letter Recognition Data Set
+(\href{http://lamda.nju.edu.cn/ml2019/ML2019-PS2-dataset.zip}{click to download}). In particular, the objective is to identify each of a large number of black-and-white
+rectangular pixel displays as one of the 26 capital letters in the English alphabet. The detailed statistics of this data set is listed in Table~\ref{tab:dataset}. The data set was then randomly split into train set and test set with proportion $7:3$. Also, letters from `A' to `Z' are mapped to digits `1' to `26' respectively as represented in the last column of the provided data set.
+
+
+\begin{table}[!ht]
+    \centering
+    \caption{Statistics of the data set.}
+    \vspace{2mm}
+    \label{tab:dataset}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Property & Value & Description\\
+    \hline
+        Number of Instances & 20,000 & Rows of the data set\\
+    \hline
+        Number of Features & 17 & Columns of the data set\\
+    \hline
+        Number of classes & 26 & Dimension of the target attribute \\
+    \hline
+    \end{tabular}
+\end{table}
+
+
+In order to build machine learning models, you are supposed to implement Logistic Regression (LR) algorithm which is commonly used in classification tasks. Specifically, in this experiment, you have to adapt the traditional binary class LR method to tackle the multi-class learning problem. 
+
+\begin{enumerate}
+    \item[(1)] [\textbf{5pts}] You are encouraged to implement the code using \emph{Python3} or \emph{Matlab}, implementations in any other programming language will not be judged. Please name the source file (which contains the main function) as \emph{LR\underline{\hspace{0.5em}}main.py} (for python3) or \emph{LR\underline{\hspace{0.5em}}main.m} (for matlab). Finally, your code needs to print the testing performance on the provided test set once executed.
+
+    \item[(2)] [\textbf{30pts}] Functions required to implement:
+    \begin{itemize}
+        \item Implement LR algorithm using gradient descent or Newton's method.
+        \item Incorporate One-vs-Rest (OvR) strategy to tackle multi-class classification problem.
+    \end{itemize}
+    \item[(3)] [\textbf{20pts}] Explain implementing details in your submitted report (source code should not be included in your report), including optimization details and hyper-parameter settings, etc. Also, testing performance with respect to Accuracy, Precision, Recall, and $F_1$ score should be reported following the form of Table 2.
+\end{enumerate}
+
+\begin{table}[h]
+    \centering
+     \caption{Performance of your implementation on test set.}
+     \vspace{2mm}
+    \label{tab:my_label}
+    \begin{tabular}{|c|c|}
+       \hline
+       Performance Metric & Value (\%) \\
+       \hline
+       accuracy & 00.00 \\
+       \hline
+       micro Precision  & 00.00\\
+       \hline
+       micro Recall & 00.00\\
+       \hline
+       micro $F_1$ & 00.00\\
+       \hline
+       macro Precision  & 00.00\\
+       \hline
+       macro Recall & 00.00\\
+       \hline
+       macro $F_1$ & 00.00\\
+       \hline
+    \end{tabular}
+
+\end{table}
+
+\textbf{NOTE:} Any off-the-shelf implementations of LR or optimization methods are \textbf{NOT ALLOWED} to use. When submitting your code and report, all files should be placed in the same directory (without any sub-directory).
+
+\end{document}
